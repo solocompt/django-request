@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from socket import gethostbyadd
+from socket import gethostbyaddr
 from ipware.ip import get_real_ip
 
 from django.conf import settings
