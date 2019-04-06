@@ -31,6 +31,7 @@ setup(
         'Django>=1.10',
         'python-dateutil',
         'six',
+        'django-ipware'
     ],
     license=request.__licence__,
     classifiers=[
