@@ -63,7 +63,9 @@ class Request(models.Model):
         self.is_ajax = request.is_ajax()
 
         # User information.
-        self.ip = get_real_ip(request) if not None else '127.0.0.1'
+        self.ip = get_real_ip(request)
+        if not self.ip:
+            self.ip = '127.0.0.1'
         self.referer = request.META.get('HTTP_REFERER', '')[:255]
         self.user_agent = request.META.get('HTTP_USER_AGENT', '')[:255]
         self.language = request.META.get('HTTP_ACCEPT_LANGUAGE', '')[:255]
